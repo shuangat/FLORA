@@ -72,7 +72,7 @@ optional arguments:
 
 ### annotateTranscripts.py
 
-Find overlapped and nearby genes of lncRNAs in reference annotation (RefSeq or GENCODE annotation in GFF format)
+Find overlapped and nearby genes of lncRNAs in reference annotation (RefSeq or GENCODE annotation in GFF format).
 
 ```
 usage: annotateTranscripts [-h] -r REFERENCE -f PATH [-i IDENTIFIER]
@@ -97,4 +97,12 @@ optional arguments:
   -o OUTPUT      Output file name for the final annotation. Default:
                  FLORA_annotation.txt
 ```
+
+### functionalPrediction.R
+Prodict lncRNA's function according to lncRNA - coding gene co-expression network. 
+
+```
+
+```
+
 
