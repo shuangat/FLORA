@@ -99,7 +99,7 @@ optional arguments:
 ```
 
 ### functionalPrediction.R
-Prodict lncRNA's function according to lncRNA - coding gene co-expression network. 
+Prodict lncRNA's function according to lncRNA/coding gene co-expression network. 
 
 ```
 
