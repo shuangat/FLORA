@@ -102,6 +102,11 @@ optional arguments:
 Prodict lncRNA's function according to lncRNA/coding gene co-expression network. 
 
 ```
+usage: coexpression(#coding-lncRNA expression file)
+output: coding-lncRNA co-expression 
+
+usage: functionalPrediction(#name of lncRNA)
+output: GO terms
 
 ```
 
