@@ -103,6 +103,7 @@ Prodict lncRNA's function according to lncRNA/coding gene co-expression network.
 
 ```
 You need to install the R package “gProfileR” first.
+install.packages("gProfileR")
 
 correlation()
 usage: correlation(file)   #full path to coding-lncRNA expression file
