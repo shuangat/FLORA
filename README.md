@@ -105,15 +105,15 @@ Prodict lncRNA's function according to lncRNA/coding gene co-expression network.
 You need to install the R package “gProfileR” first.
 install.packages("gProfileR")
 
-correlation()
-usage: correlation(file)   #full path to coding-lncRNA expression file
-output: coding-lncRNA co-expression matrix
+calculateCorrelation()
+  usage: calculateCorrelation(file)   #full path to coding-lncRNA expression file
+  output: coding-lncRNA co-expression matrix
 
 functionalPrediction()
-usage: functionalPrediction(lnc.name,           #name of lncRNA 
-                            file_correlation,   #full path to correlation file, generated in correlation() function
-                            file_lnc.info)      #full path to lnc.info file, generated in correlation() function
-output: list of GO terms
+  usage: functionalPrediction(lnc.name,           #name of lncRNA 
+                              file_correlation,   #full path to correlation file, generated in correlation() function
+                              file_lnc.info)      #full path to lnc.info file, generated in correlation() function
+  output: list of GO terms
 
 ```
 
