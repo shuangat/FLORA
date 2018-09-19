@@ -98,10 +98,12 @@ optional arguments:
                  FLORA_annotation.txt
 ```
 
-### functionalPrediction.R
+### functionalPrediction (R)
 Prodict lncRNA's function according to lncRNA/coding gene co-expression network. 
 
 ```
+You need to install the R package “gProfileR” first.
+
 correlation()
 usage: correlation(file)   #full path to coding-lncRNA expression file
 output: coding-lncRNA co-expression matrix
