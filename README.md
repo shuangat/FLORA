@@ -103,11 +103,13 @@ Prodict lncRNA's function according to lncRNA/coding gene co-expression network.
 
 ```
 correlation()
-usage: correlation(#coding-lncRNA expression file)
+usage: correlation(file)   #full path to coding-lncRNA expression file
 output: coding-lncRNA co-expression matrix
 
 functionalPrediction()
-usage: functionalPrediction(#name of lncRNA)
+usage: functionalPrediction(lnc.name,           #name of lncRNA 
+                            file_correlation,   #full path to correlation file, generated in correlation() function
+                            file_lnc.info)      #full path to lnc.info file, generated in correlation() function
 output: list of GO terms
 
 ```
