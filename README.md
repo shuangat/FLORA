@@ -1,4 +1,4 @@
-# FLORA(II): Functional Long-noncoding RNA Assembly Workflow (II)
+# FLORA: Functional Long-noncoding RNA Assembly Workflow
 
 FLORA(II) provides easy-to-use command line tools for fast lncRNA transcriptome assembly from RNA-seq BAM files.
 
