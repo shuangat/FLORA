@@ -160,5 +160,5 @@ ggplot(aes(x = term.name, y = -log10(GO$p.value), fill = domain), data = GO) +
   theme(legend.title=element_blank(), axis.title.x = element_text(size=9) )
 
 ```
-![image](https://github.com/shuangat/FLORA/data/LINC01614.png)
+![image](https://github.com/shuangat/FLORA/blob/master/data/LINC01614.png?raw=true)
 
