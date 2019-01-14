@@ -119,20 +119,19 @@ java -Xmx120G -jar .../aracne.jar -o output/ --consolidate
 LncRNA's function was predicted based on gene regulatory network. 
 ```
 getnetwork()
-  usage: getnetwork(lnc.info, coding.info,         #lncRNA and coding genes' information (id and name)
-                    network,                       #gene regulatory network (predicted by ARACNe-AP)
-                    lnc.name)                      #name of target lncRNA   
-  output: coding - target lncRNA  regulatory network
+    usage: getnetwork(lnc.info, coding.info,         #lncRNA and coding genes' information (id and name)
+                      network,                       #gene regulatory network (predicted by ARACNe-AP)
+                      lnc.name)                      #name of target lncRNA   
+    output: coding - target lncRNA  regulatory network
 
 functionalPrediction()
-  usage: functionalPrediction(lnc.name,           #name of lncRNA 
-                              lnc.coding,         #fcoding - target lncRNA  regulatory network, generated in getnetwork() function
-                              gotype)             #["regulator","target","all"] use regulator/target/all genes in the netowrk to do the prediction
-  output: list of GO terms
+    usage: functionalPrediction(lnc.name,           #name of lncRNA 
+                                lnc.coding,         #fcoding - target lncRNA  regulatory network, generated in getnetwork() function
+                                gotype)             #["regulator","target","all"] use regulator/target/all genes in the netowrk to do the prediction
+    output: list of GO terms
 
 
 You need to install the R package “gProfileR” first.
-  install.packages("gProfileR")
 
 ```
 
