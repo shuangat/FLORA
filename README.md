@@ -119,15 +119,15 @@ You need to install the R package “gProfileR” first.
 install.packages("gProfileR")
 
 getnetwork()
-  usage: getnetwork(lnc.info, coding.info, 
-                    network, 
-                    lnc.name                      #name of )   
-  output: coding-lncRNA co-expression matrix
+  usage: getnetwork(lnc.info, coding.info,         #lncRNA and coding genes' information (id and name)
+                    network,                       #gene regulatory network (predicted by ARACNe-AP)
+                    lnc.name)                      #name of target lncRNA   
+  output: coding - target lncRNA  regulatory network
 
 functionalPrediction()
   usage: functionalPrediction(lnc.name,           #name of lncRNA 
-                              file_correlation,   #full path to correlation file, generated in correlation() function
-                              file_lnc.info)      #full path to lnc.info file, generated in correlation() function
+                              lnc.coding,         #fcoding - target lncRNA  regulatory network, generated in getnetwork() function
+                              gotype)             #["regulator","target","all"] use regulator/target/all genes in the netowrk to do the prediction
   output: list of GO terms
 
 ```
