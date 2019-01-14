@@ -102,7 +102,7 @@ optional arguments:
 
 
 Gene regulatory netork is constructed via "ARACNe-AP" (https://github.com/califano-lab/ARACNe-AP) based on expression data:
-
+[Command Line]
 ```
 for i in {1..100}
 do
@@ -117,6 +117,7 @@ java -Xmx120G -jar .../aracne.jar -o output/ --consolidate
 ```
 
 LncRNA's function was predicted based on gene regulatory network. 
+[R]
 ```
 getnetwork()
     usage: getnetwork(lnc.info, coding.info,         #lncRNA and coding genes' information (id and name)
