@@ -101,7 +101,7 @@ optional arguments:
 ### functionalPrediction
 
 
-Gene regulatory netork is constructed via "ARACNe-AP" (https://github.com/califano-lab/ARACNe-AP) based on expression data.
+Gene regulatory network is constructed via "ARACNe-AP" (https://github.com/califano-lab/ARACNe-AP) based on expression data.
 [Command Line]
 ```
 for i in {1..100}
