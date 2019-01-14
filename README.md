@@ -125,7 +125,7 @@ getnetwork()
                       lnc.name)                      #name of target lncRNA   
     output: coding - target lncRNA  regulatory network
 
-functionalPrediction()
+makePrediction()
     usage: functionalPrediction(lnc.name,           #name of lncRNA 
                                 lnc.coding,         #fcoding - target lncRNA  regulatory network, generated in getnetwork() function
                                 gotype)             #["regulator","target","all"] use regulator/target/all genes in the netowrk to do the prediction
@@ -139,7 +139,7 @@ You need to install the R package “gProfileR” first.
 [Example]
 ```
 
-source('.../bin/function.R')
+source('.../bin/functionalPredictio.R')
 
 lnc.info <- read.table(".../data/lnc.info.txt", sep = "\t", head=T, row.names=1)
 coding.info <- read.table(".../data/coding.info.txt", sep = "\t", head=T, row.names=1)
@@ -149,7 +149,7 @@ lnc.name <- "LINC01614"
 
 lnc.coding <- getnetwork(lnc.info, coding.info, network, lnc.name)
 
-results <- functionalPrediction(lnc.name, lnc.coding)
+results <- makePrediction(lnc.name, lnc.coding)
 gene.use <- results$gene.use
 GO <- subset(results$GO, domain %in% c("BP", "CC", "MF"))
 
