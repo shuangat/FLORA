@@ -98,26 +98,26 @@ optional arguments:
                  FLORA_annotation.txt
 ```
 
-### functionalPrediction (R)
-Prodict lncRNA's function based on gene regulatory network. 
+### functionalPrediction
+
 
 Gene regulatory netork is constructed via "ARACNe-AP" (https://github.com/califano-lab/ARACNe-AP) based on expression data:
 
+```
 for i in {1..100}
 do
-(
-java -Xmx120G -jar .../aracne.jar -e data/expression.matrix.txt  -o output/ --tfs data/lnc_tf.txt --pvalue 1E-8 --seed $i
-) &
-wait
+  (
+    java -Xmx120G -jar .../aracne.jar -e data/expression.matrix.txt  -o output/ --tfs data/lnc_tf.txt --pvalue 1E-8 --seed $i
+  ) &
+  wait
 done
 
 java -Xmx120G -jar .../aracne.jar -o output/ --consolidate
 
-
 ```
-You need to install the R package “gProfileR” first.
-install.packages("gProfileR")
 
+LncRNA's function was predicted based on gene regulatory network. 
+```
 getnetwork()
   usage: getnetwork(lnc.info, coding.info,         #lncRNA and coding genes' information (id and name)
                     network,                       #gene regulatory network (predicted by ARACNe-AP)
@@ -129,6 +129,10 @@ functionalPrediction()
                               lnc.coding,         #fcoding - target lncRNA  regulatory network, generated in getnetwork() function
                               gotype)             #["regulator","target","all"] use regulator/target/all genes in the netowrk to do the prediction
   output: list of GO terms
+
+
+You need to install the R package “gProfileR” first.
+  install.packages("gProfileR")
 
 ```
 
