@@ -126,9 +126,9 @@ getnetwork()
     output: coding - target lncRNA  regulatory network
 
 makePrediction()
-    usage: functionalPrediction(lnc.name,           #name of lncRNA 
-                                lnc.coding,         #fcoding - target lncRNA  regulatory network, generated in getnetwork() function
-                                gotype)             #["regulator","target","all"] use regulator/target/all genes in the netowrk to do the prediction
+    usage: makePrediction(lnc.name,           #name of lncRNA 
+                          lnc.coding,         #fcoding - target lncRNA  regulatory network, generated in getnetwork() function
+                          gotype)             #["regulator","target","all"] use regulator/target/all genes in the netowrk to do the prediction
     output: list of GO terms
 
 
