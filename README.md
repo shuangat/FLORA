@@ -150,9 +150,6 @@ lnc.coding <- getnetwork(lnc.info, coding.info, network, lnc.name)
 results <- functionalPrediction(lnc.name, lnc.coding)
 gene.use <- results$gene.use
 GO <- subset(results$GO, domain %in% c("BP", "CC", "MF"))
-BP <- results$BP
-CC <- results$CC
-MF <- results$MF
 
 library(ggplot2)
 GO$term.name = factor(GO$term.name, levels = GO$term.name)
