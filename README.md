@@ -104,7 +104,10 @@ optional arguments:
 Gene regulatory network is constructed via "ARACNe-AP" (https://github.com/califano-lab/ARACNe-AP) based on expression data.
 [Command Line]
 ```
-for i in {1..100}
+#  Example code for ARACNe-AP
+# Perform 3 bootstrapping and network reconstruction
+
+for i in {1..3}
 do
   (
     java -Xmx120G -jar .../aracne.jar -e data/expression.matrix.txt  -o output/ --tfs data/lnc_tf.txt --pvalue 1E-8 --seed $i
@@ -112,6 +115,7 @@ do
   wait
 done
 
+# Generating consensus network
 java -Xmx120G -jar .../aracne.jar -o output/ --consolidate
 
 ```
@@ -131,28 +135,31 @@ makePrediction()
                           gotype)             #["regulator","target","all"] use regulator/target/all genes in the netowrk to do the prediction
     output: list of GO terms
 
-
-You need to install the R package “gProfileR” first.
-
 ```
 
 [Example]
 ```
+# Example code for predicting the function of your lncRNA of interest
 
 source('.../bin/functionalPredictio.R')
 
+# Load information of all coding genes and lncRNAs
 lnc.info <- read.table(".../data/lnc.info.txt", sep = "\t", head=T, row.names=1)
 coding.info <- read.table(".../data/coding.info.txt", sep = "\t", head=T, row.names=1)
+
+# Load gene regulatory network constructed by ARACNe-AP
 network <- read.table(".../data/network.txt", sep = "\t", head=T)
 
+# Input the name of your lncRNA of interest
 lnc.name <- "LINC01614"
 
+# Extract genes connected with the lncRNA and perform functional prediction
 lnc.coding <- getnetwork(lnc.info, coding.info, network, lnc.name)
-
 results <- makePrediction(lnc.name, lnc.coding)
 gene.use <- results$gene.use
 GO <- subset(results$GO, domain %in% c("BP", "CC", "MF"))
 
+# Plotting significant GO terms associated with the networks of the lncRNA
 library(ggplot2)
 GO$term.name = factor(GO$term.name, levels = GO$term.name)
 ggplot(aes(x = term.name, y = -log10(GO$p.value), fill = domain), data = GO) + 
