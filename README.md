@@ -136,4 +136,30 @@ You need to install the R package “gProfileR” first.
 
 ```
 
+[Example]
+```
 
+lnc.info <- read.table("data/lnc.info.txt", sep = "\t", head=T, row.names=1)
+coding.info <- read.table("data/coding.info.txt", sep = "\t", head=T, row.names=1)
+network <- read.table("data/network.txt", sep = "\t", head=T)
+
+lnc.name <- "LINC01614"
+
+lnc.coding <- getnetwork(lnc.info, coding.info, network, lnc.name)
+
+results <- functionalPrediction(lnc.name, lnc.coding)
+gene.use <- results$gene.use
+GO <- subset(results$GO, domain %in% c("BP", "CC", "MF"))
+BP <- results$BP
+CC <- results$CC
+MF <- results$MF
+
+library(ggplot2)
+GO$term.name = factor(GO$term.name, levels = GO$term.name)
+ggplot(aes(x = term.name, y = -log10(GO$p.value), fill = domain), data = GO) + 
+  geom_bar(stat="identity",position="dodge") +
+  labs(x = "", y = "-log10_Pvalue", title= lnc.name )  + coord_flip() +
+  theme_classic() + scale_fill_manual(values = c('#8470FF','#87CEFA','#FFC125')) +
+  theme(legend.title=element_blank(), axis.title.x = element_text(size=9) )
+
+```
