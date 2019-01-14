@@ -139,9 +139,11 @@ You need to install the R package “gProfileR” first.
 [Example]
 ```
 
-lnc.info <- read.table("data/lnc.info.txt", sep = "\t", head=T, row.names=1)
-coding.info <- read.table("data/coding.info.txt", sep = "\t", head=T, row.names=1)
-network <- read.table("data/network.txt", sep = "\t", head=T)
+source('.../bin/function.R')
+
+lnc.info <- read.table(".../data/lnc.info.txt", sep = "\t", head=T, row.names=1)
+coding.info <- read.table(".../data/coding.info.txt", sep = "\t", head=T, row.names=1)
+network <- read.table(".../data/network.txt", sep = "\t", head=T)
 
 lnc.name <- "LINC01614"
 
