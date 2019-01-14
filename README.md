@@ -101,11 +101,11 @@ optional arguments:
 ### functionalPrediction (R)
 Prodict lncRNA's function based on gene regulatory network. 
 
-Gene regulatory netork is constructed via "ARACNe-AP" based on expression data:
-(https://github.com/califano-lab/ARACNe-AP)
+Gene regulatory netork is constructed via "ARACNe-AP" (https://github.com/califano-lab/ARACNe-AP) based on expression data:
+
 for i in {1..100}
- do
- (
+do
+(
    java -Xmx120G -jar .../aracne.jar -e data/expression.matrix.txt  -o output/ --tfs data/lnc_tf.txt --pvalue 1E-8 --seed $i
  ) &
    wait
