@@ -99,14 +99,29 @@ optional arguments:
 ```
 
 ### functionalPrediction (R)
-Prodict lncRNA's function according to lncRNA/coding gene co-expression network. 
+Prodict lncRNA's function based on gene regulatory network. 
+
+Gene regulatory netork is constructed via "ARACNe-AP" based on expression data:
+(https://github.com/califano-lab/ARACNe-AP)
+for i in {1..100}
+ do
+ (
+   java -Xmx120G -jar .../aracne.jar -e data/expression.matrix.txt  -o output/ --tfs data/lnc_tf.txt --pvalue 1E-8 --seed $i
+ ) &
+   wait
+ done
+
+java -Xmx120G -jar .../aracne.jar -o output/ --consolidate
+
 
 ```
 You need to install the R package “gProfileR” first.
 install.packages("gProfileR")
 
-calculateCorrelation()
-  usage: calculateCorrelation(file)   #full path to coding-lncRNA expression file
+getnetwork()
+  usage: getnetwork(lnc.info, coding.info, 
+                    network, 
+                    lnc.name                      #name of )   
   output: coding-lncRNA co-expression matrix
 
 functionalPrediction()
