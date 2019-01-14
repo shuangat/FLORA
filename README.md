@@ -104,9 +104,9 @@ optional arguments:
 Gene regulatory network is constructed via "ARACNe-AP" (https://github.com/califano-lab/ARACNe-AP) based on expression data.
 [Command Line]
 ```
-#  Example code for ARACNe-AP
-# Perform 3 bootstrapping and network reconstruction
+#########  Example code for ARACNe-AP #########
 
+# Perform 3 bootstrapping and network reconstruction
 for i in {1..3}
 do
   (
@@ -139,7 +139,7 @@ makePrediction()
 
 [Example]
 ```
-# Example code for predicting the function of your lncRNA of interest
+######### Example code for predicting the function of your lncRNA of interest #########
 
 source('.../bin/functionalPredictio.R')
 
