@@ -106,10 +106,10 @@ Gene regulatory netork is constructed via "ARACNe-AP" (https://github.com/califa
 for i in {1..100}
 do
 (
-   java -Xmx120G -jar .../aracne.jar -e data/expression.matrix.txt  -o output/ --tfs data/lnc_tf.txt --pvalue 1E-8 --seed $i
- ) &
-   wait
- done
+java -Xmx120G -jar .../aracne.jar -e data/expression.matrix.txt  -o output/ --tfs data/lnc_tf.txt --pvalue 1E-8 --seed $i
+) &
+wait
+done
 
 java -Xmx120G -jar .../aracne.jar -o output/ --consolidate
 
