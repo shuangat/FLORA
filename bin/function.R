@@ -39,7 +39,7 @@ getnetwork <- function(lnc.info, coding.info, network, lnc.name) {
 }
 
 
-functionalPrediction <- function(lnc.name, lnc.coding, gotype="all") {
+makePrediction <- function(lnc.name, lnc.coding, gotype="all") {
   library(gProfileR)
   
   gene.regulator <- setdiff(lnc.coding[,1], lnc.name)
