@@ -6,10 +6,15 @@ FLORA provides easy-to-use command line tools for fast lncRNA transcriptome asse
 ## Prerequisites
 
 • bedtools (https://bedtools.readthedocs.io/en/latest/)
+
 • CPAT (http://rna-cpat.sourceforge.net/)
+
 • (optional) CPAT prebuilt logit model and hexamer table files (https://sourceforge.net/projects/rna-cpat/files/v1.2.2/prebuilt_model/)
+
 • GTF files from Gencode (https://www.gencodegenes.org/)
+
 • GTF files and assembly report from Refseq (ftp://ftp.ncbi.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/)
+
 • gProfilerR package in R (https://cran.r-project.org/package=gProfileR)
 
 ## Installing
