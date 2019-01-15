@@ -133,15 +133,15 @@ LncRNA's function was predicted based on gene regulatory network.
 [R]
 ```
 getnetwork()
-    usage: getnetwork(lnc.info, coding.info,         #lncRNA and coding genes' information (id and name)
-                      network,                       #gene regulatory network (predicted by ARACNe-AP)
-                      lnc.name)                      #name of target lncRNA   
+    usage: getnetwork(lnc.info, coding.info,         # lncRNA and coding genes' information (id and name)
+                      network,                       # gene regulatory network (predicted by ARACNe-AP)
+                      lnc.name)                      # name of target lncRNA   
     output: coding - target lncRNA  regulatory network
 
 makePrediction()
-    usage: makePrediction(lnc.name,           #name of lncRNA 
-                          lnc.coding,         #fcoding - target lncRNA  regulatory network, generated in getnetwork() function
-                          gotype)             #["regulator","target","all"] use regulator/target/all genes in the netowrk to do the prediction
+    usage: makePrediction(lnc.name,           # name of lncRNA 
+                          lnc.coding,         # coding - target lncRNA  regulatory network, generated in getnetwork() function
+                          gotype)             # ["regulator","target","all"] use regulator/target/all genes in the netowrk to do the prediction
     output: list of GO terms
 
 ```
@@ -154,6 +154,10 @@ makePrediction()
 Rscript example.R .../functionalPrediction.R .../lnc.info.txt .../coding.info.txt .../network.txt output_dir LINC01614 
 
 outputs:
+  LINC01614_lnc.coding.txt   # table of genes connected with your lncRNA of interest
+  LINC01614_GO.txt           # table of significant GO terms associated with your lncRNA of interest
+  LINC01614_GO.pdf           # figure of significant GO terms associated with your lncRNA of interest
+
 ```
 ![image](https://github.com/shuangat/FLORA/blob/master/data/LINC01614.png?raw=true)
 
