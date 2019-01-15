@@ -119,7 +119,7 @@ Gene regulatory network is constructed via "ARACNe-AP" (https://github.com/calif
 for i in {1..3}
 do
   (
-    java -Xmx120G -jar .../aracne.jar -e data/expression.matrix.txt  -o output/ --tfs data/lnc_tf.txt --pvalue 1E-8 --seed $i
+    java -Xmx120G -jar .../aracne.jar -e .../expression.matrix.txt  -o output/ --tfs .../lnc_tf.txt --pvalue 1E-8 --seed $i
   ) &
   wait
 done
@@ -150,33 +150,10 @@ makePrediction()
 ```
 ######### Example code for predicting the function of your lncRNA of interest #########
 
-source('.../bin/functionalPredictio.R')
+[Command Line]
+Rscript example.R .../functionalPrediction.R .../lnc.info.txt .../coding.info.txt .../network.txt output_dir LINC01614 
 
-# Load information of all coding genes and lncRNAs
-lnc.info <- read.table(".../data/lnc.info.txt", sep = "\t", head=T, row.names=1)
-coding.info <- read.table(".../data/coding.info.txt", sep = "\t", head=T, row.names=1)
-
-# Load gene regulatory network constructed by ARACNe-AP
-network <- read.table(".../data/network.txt", sep = "\t", head=T)
-
-# Input the name of your lncRNA of interest
-lnc.name <- "LINC01614"
-
-# Extract genes connected with the lncRNA and perform functional prediction
-lnc.coding <- getnetwork(lnc.info, coding.info, network, lnc.name)
-results <- makePrediction(lnc.name, lnc.coding)
-gene.use <- results$gene.use
-GO <- subset(results$GO, domain %in% c("BP", "CC", "MF"))
-
-# Plotting significant GO terms associated with the networks of the lncRNA
-library(ggplot2)
-GO$term.name = factor(GO$term.name, levels = GO$term.name)
-ggplot(aes(x = term.name, y = -log10(GO$p.value), fill = domain), data = GO) + 
-  geom_bar(stat="identity",position="dodge") +
-  labs(x = "", y = "-log10_Pvalue", title= lnc.name )  + coord_flip() +
-  theme_classic() + scale_fill_manual(values = c('#8470FF','#87CEFA','#FFC125')) +
-  theme(legend.title=element_blank(), axis.title.x = element_text(size=9) )
-
+outputs:
 ```
 ![image](https://github.com/shuangat/FLORA/blob/master/data/LINC01614.png?raw=true)
 
