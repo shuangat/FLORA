@@ -148,7 +148,7 @@ makePrediction()
 
 [Example]
 ```
-######### Example code for predicting the function of your lncRNA of interest #########
+######### Example code for predicting the function of LINC01614 (your lncRNA of interest) #########
 
 [Command Line]
 Rscript example.R .../functionalPrediction.R .../lnc.info.txt .../coding.info.txt .../network.txt output_dir LINC01614 
