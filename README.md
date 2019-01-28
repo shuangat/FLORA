@@ -151,7 +151,7 @@ makePrediction()
 ######### Example code for predicting the function of LINC01614 (your lncRNA of interest) #########
 
 [Command Line]
-Rscript example.R .../functionalPrediction.R .../lnc.info.txt .../coding.info.txt .../network.txt output_dir LINC01614 
+Rscript example.R ../bin/functionalPrediction.R lnc.info.txt coding.info.txt network.txt output_dir LINC01614 
 
 outputs:
   LINC01614_lnc.coding.txt   # table of genes connected with your lncRNA of interest
