@@ -49,7 +49,7 @@ makePrediction <- function(lnc.name, lnc.coding, gotype="all") {
   if (gotype == "regulator") {
     gene.use <- gene.regulator
   } else if (gotype == "target") {
-    gene.use <- "target"
+    gene.use <- gene.target
   } else {
     gene.use <- gene.all
   }
