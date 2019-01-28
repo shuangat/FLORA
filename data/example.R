@@ -20,8 +20,8 @@ lnc.coding <- getnetwork(lnc.info, coding.info, network, lnc.name)
 results <- makePrediction(lnc.name, lnc.coding)
 gene.use <- results$gene.use
 GO <- subset(results$GO, domain %in% c("BP", "CC", "MF"))
-write.table(lnc.coding, paste(output_dir,"/",lnc.name,"_lnc.coding.txt",sep=""), sep="\t")
-write.table(GO, paste(output_dir,"/",lnc.name,"_GO.txt",sep=""), sep="\t")
+write.table(lnc.coding, paste(output_dir,"/",lnc.name,"_lnc.coding.txt",sep=""), sep="\t", row.names = FALSE)
+write.table(GO, paste(output_dir,"/",lnc.name,"_GO.txt",sep=""), sep="\t", row.names = FALSE)
 
 # Plotting significant GO terms associated with the networks of the lncRNA
 library(ggplot2)
