@@ -1,5 +1,5 @@
 # Ownership
-Wang Lab at HKUST(http://wang-lab.ust.hk)
+[Wang Lab at HKUST](http://wang-lab.ust.hk)
 
 
 # Status
@@ -7,7 +7,7 @@ Active Development
 
 
 # Introduction
-Fast Long-noncoding RNA Assembly Workflow (FLORA) is a collection of easy-to-use command line tools for fast lncRNA transcriptome assembly from RNA-seq BAM files. It was initially developed by Hongyu Shi(https://github.com/AlexHelloWorld) and is still under active development by other members of Wang Lab at HKUST(http://wang-lab.ust.hk).
+Fast Long-noncoding RNA Assembly Workflow (FLORA) is a collection of easy-to-use command line tools for fast lncRNA transcriptome assembly from RNA-seq BAM files. It was initially developed by [Hongyu Shi](https://github.com/AlexHelloWorld) and is still under active development by other members of [Wang Lab at HKUST](http://wang-lab.ust.hk).
 
 
 # FLORA: Functional Long-noncoding RNA Assembly Workflow
